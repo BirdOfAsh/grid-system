@@ -1,0 +1,144 @@
+[gd_scene load_steps=5 format=3 uid="uid://d36cx2alli0m0"]
+
+[ext_resource type="Script" path="res://Scripts/grid_parent.gd" id="1_yq1xj"]
+[ext_resource type="Script" path="res://Scripts/item_parent.gd" id="2_ghuww"]
+[ext_resource type="Texture2D" uid="uid://bb4wbq3xw55rn" path="res://Grid.png" id="5_sebpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7q6s"]
+
+[node name="Node" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.111197, 0.111197, 0.111197, 1)
+
+[node name="GridParent" type="Node2D" parent="." node_paths=PackedStringArray("itemParent")]
+script = ExtResource("1_yq1xj")
+gridScale = 5.0
+itemParent = NodePath("ItemParent")
+
+[node name="ItemParent" type="Node2D" parent="GridParent"]
+script = ExtResource("2_ghuww")
+
+[node name="Grid1" type="Area2D" parent="GridParent"]
+position = Vector2(96, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridParent/Grid1"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_p7q6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridParent/Grid1/CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("5_sebpy")
+
+[node name="Grid2" type="Area2D" parent="GridParent"]
+position = Vector2(224, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridParent/Grid2"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_p7q6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridParent/Grid2/CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("5_sebpy")
+
+[node name="Grid3" type="Area2D" parent="GridParent"]
+position = Vector2(352, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridParent/Grid3"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_p7q6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridParent/Grid3/CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("5_sebpy")
+
+[node name="Grid4" type="Area2D" parent="GridParent"]
+position = Vector2(96, 224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridParent/Grid4"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_p7q6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridParent/Grid4/CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("5_sebpy")
+
+[node name="Grid5" type="Area2D" parent="GridParent"]
+position = Vector2(224, 224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridParent/Grid5"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_p7q6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridParent/Grid5/CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("5_sebpy")
+
+[node name="Grid6" type="Area2D" parent="GridParent"]
+position = Vector2(352, 224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridParent/Grid6"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_p7q6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridParent/Grid6/CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("5_sebpy")
+
+[node name="Grid7" type="Area2D" parent="GridParent"]
+position = Vector2(96, 352)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridParent/Grid7"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_p7q6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridParent/Grid7/CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("5_sebpy")
+
+[node name="Grid8" type="Area2D" parent="GridParent"]
+position = Vector2(224, 352)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridParent/Grid8"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_p7q6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridParent/Grid8/CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("5_sebpy")
+
+[node name="Grid9" type="Area2D" parent="GridParent"]
+position = Vector2(352, 352)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridParent/Grid9"]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_p7q6s")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridParent/Grid9/CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(1.225, 1.225)
+texture = ExtResource("5_sebpy")
+
+[connection signal="child_entered_tree" from="GridParent/ItemParent" to="GridParent" method="_on_item_parent_child_entered_tree"]
+[connection signal="child_entered_tree" from="GridParent/ItemParent" to="GridParent/ItemParent" method="_on_child_entered_tree"]
