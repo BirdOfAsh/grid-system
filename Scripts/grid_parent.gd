@@ -139,7 +139,6 @@ func calculateBorderVector(positionList,boundryList):
 	var scaleFactor = gridScale * 10
 	var lowerBoundry: Vector2
 	var upperBoundry: Vector2
-	#testing purposes
 	for itemPos in positionList:
 		lowerBoundry = Vector2(itemPos.x - (scaleFactor), itemPos.y - (scaleFactor))
 		upperBoundry = Vector2(itemPos.x + (scaleFactor), itemPos.y + (scaleFactor))
