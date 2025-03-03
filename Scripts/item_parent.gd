@@ -6,7 +6,7 @@ extends Node2D
 @onready var sprite3 = preload("res://Item3.png")
 
 var spriteList: Array = []
-var itemSprite
+var itemTexture
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,5 +25,5 @@ func createItem():
 
 
 func _on_child_entered_tree(node: Node) -> void:
-	itemSprite = spriteList[randi_range(0,spriteList.size())-1]
-	node.sprite = itemSprite
+	itemTexture = spriteList[randi_range(0,spriteList.size())-1]
+	node.setTexture(itemTexture)
