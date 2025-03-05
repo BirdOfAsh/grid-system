@@ -1,8 +1,7 @@
 extends Node2D
 
-
-@export var gridScale : float
 @export var itemParent : Node2D
+@export var gridScale : float
 @export var gridsPerRow: int
 @export var numOfRows: int
 

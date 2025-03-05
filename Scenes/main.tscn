@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d36cx2alli0m0"]
 
-[ext_resource type="Script" path="res://Scripts/grid_parent.gd" id="1_yq1xj"]
-[ext_resource type="Script" path="res://Scripts/item_parent.gd" id="2_ghuww"]
+[ext_resource type="Script" uid="uid://bp6lhgmrtfl2t" path="res://Scripts/grid_parent.gd" id="1_yq1xj"]
+[ext_resource type="Script" uid="uid://l4rkw72yefnn" path="res://Scripts/item_parent.gd" id="2_ghuww"]
 
 [node name="Node" type="Node"]
 
@@ -25,10 +25,10 @@ color = Color(0.111197, 0.111197, 0.111197, 1)
 
 [node name="GridParent" type="Node2D" parent="." node_paths=PackedStringArray("itemParent")]
 script = ExtResource("1_yq1xj")
-gridScale = 5.0
 itemParent = NodePath("ItemParent")
-gridsPerRow = 10
-numOfRows = 6
+gridScale = 1.0
+gridsPerRow = 16
+numOfRows = 16
 
 [node name="ItemParent" type="Node2D" parent="GridParent"]
 script = ExtResource("2_ghuww")
